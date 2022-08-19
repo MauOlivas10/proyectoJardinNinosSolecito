@@ -1,0 +1,50 @@
+{% extends "inicio/encabezado.html" %} {% block titulo %} Pendientes {% endblock %} {% block contenido %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Tareas Pendientes</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Tarea</th>
+                        <th>Descripción</th>
+                        <th>clave</th>
+                        <th>Fecha de Entrega</th>
+                        <th>Grado</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for tarea in tareas %}
+                    <tr>
+                        <td>
+                            <image src="{{tarea.imagen.url }}" class="img-fluid " width="100 ">
+                        </td>
+                        <td>{{tarea.nomTarea}}</td>
+                        <td>{{tarea.descripcion}}</td>
+                        <td>{{tarea.clave}}</td>
+                        <td>{{tarea.FechaEntrega}}</td>
+                        <td>{{tarea.grado}}</td>
+                        <td>Activo<div class="spinner-grow text-success" style="width: 5px; height:5px;" role="status">
+</div></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+
+        </div>
+    </div>
+
+    {% endblock %}

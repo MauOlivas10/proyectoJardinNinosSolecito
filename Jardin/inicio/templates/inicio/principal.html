@@ -1,0 +1,33 @@
+{% extends "inicio/encabezado.html" %} {% block titulo %} Inicio {% endblock %} {% block contenido %}
+
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Bienvenido a la aplicación del Jardin de Niños el Solecito</h1>
+            <img style="width: 300px;position:absolute; margin-top: -150px; margin-left: 1050px;" src='http://jardinninos.pythonanywhere.com/media/admin-interface/logo/logoSolceito.png'>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="mt-4" style="font-size:35px;">Nuestra Misión</h5>
+            <p class="color">Crear los futuros líderes de México, brindándoles una educación ética, académica,
+                psicológica y física, la cual les brinde las herramientas necesarias para ser competitivos en un mundo globalizado.</p>
+            <h5 style="font-size:35px;">Nuestra Visión</h5>
+            <p class="color">Convertirnos en un modelo educativo con reconocimiento internacional, debido al desempeño
+                de sus egresados en todos los ámbitos sociales.</p>
+            <h5 style="font-size:35px;">Valores</h5>
+            <p class="color">Respeto, Compañerismo, Justicia, Igualdad, Autoconciencia, Responsabilidad, Creatividad, Honradez, Asertividad y Competitividad.</p>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 mt-4">
+            <h5>Para ver las tareas pendientes, haz click en el siguiente enlace:</h5>
+            <p>
+                <a href="{% url 'Pendientes' %}">Tareas pendientes</a>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

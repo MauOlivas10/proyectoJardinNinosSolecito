@@ -1,0 +1,53 @@
+{% extends "inicio/encabezado.html" %} {% block titulo %} Entregables {% endblock %} 
+
+{% block contenido %}
+
+
+<div class="col-5 container">
+    <div class="row-4">
+        <form class="form-horizontal" action="{% url 'RegistrarDuda'%}" method="POST" role="form">
+            {%csrf_token%}
+        <div class="col-md-5">
+            <h1>Dudas</h1>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Nombre del Padre o Tutor</label>
+            <input type="text" name="nombreP" class="form-control"  placeholder="Nombre padre">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Nombre del Alumno</label>
+            <input type="text" name="nombreA" class="form-control" placeholder="Nombre niño">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Numero de teléfono</label>
+            <input type="text" name="telefono" class="form-control" placeholder="Teléfono">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Grupo</label>
+            <select class="form-select" name="grupo" aria-label="Default select example">
+                <option selected>Seleciona una opción</option>
+                <option value="1A">1A</option>
+                <option value="1B">1B</option>
+                <option value="2A">2A</option>
+                <option value="2B">2B</option>
+                <option value="3A">3A</option>
+                <option value="3B">3B</option>
+              </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Correo Electronico</label>
+            <input type="email" name="correo" class="form-control" placeholder="Javi_1A@example.com">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Dudas</label>
+            <textarea class="form-control" name="duda" rows="3" placeholder="Escribe aqui las dudas que tengas sobre las tareas"></textarea>
+        </div>
+        <div class="form-actions text-right">
+            <input type="submit" value="Enviar" class="btn btn-outline-danger">
+        </div>
+        </form>
+    </div>
+    <br>
+</div>
+
+{% endblock %}

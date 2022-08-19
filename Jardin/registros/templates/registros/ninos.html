@@ -1,0 +1,21 @@
+{% extends "inicio/encabezado.html" %} {% block titulo %} Area Niños {% endblock %} {% block contenido %}{% load static%}
+
+
+    <link rel="stylesheet" href="{% static 'styles.cssc'%}">
+    <main class="main-container">
+
+        <br><br>
+        <center>
+            <h3>Ponte a Dibujar</h3>
+            <p>Nota: para borrar el dibujo, favor de recargar el sitio, y para una mejor rexperiencia presiona F11</p>
+            <br><br>
+        <canvas id="main-canvas" style="background-color: #ffff; border: 1px solid, #0000;" width="1200" height="500"></canvas>
+        </center>
+    </main>
+    <script src="{% static 'js/index.js/'%}"></script>
+  </body>
+</html>
+
+
+
+    {% endblock %}

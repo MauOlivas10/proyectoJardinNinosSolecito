@@ -1,0 +1,56 @@
+{% extends "inicio/encabezado.html" %} {% block titulo %} Entregables {% endblock %} 
+
+{% block contenido %}
+
+
+<!-- Formulario -->
+
+<div class="col-5 container">
+    <div class="row-4">
+        <div class="col-md-12 mb-4">
+            <form class="form-horizontal" action="{% url 'SubirEntregables'%}"  enctype="multipart/form-data" method="POST" role="form">
+                {%csrf_token%}
+            <h1>Agrega las tareas pendientes</h1>
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">Nombre del Alumno</label>
+            <input type="text" name="nombreAlumno" class="form-control" placeholder="Javier Alexis">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Grupo</label>
+            <select class="form-select" name="grupo" aria-label="Default select example">
+                <option selected>Seleciona una opción</option>
+                <option value="1A">1A</option>
+                <option value="1B">1B</option>
+                <option value="2A">2A</option>
+                <option value="2B">2B</option>
+                <option value="3A">3A</option>
+                <option value="3B">3B</option>
+              </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Correo Electronico</label>
+            <input type="email" name="correo" class="form-control" placeholder="Javi_1A@example.com">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Nota</label>
+            <textarea name="nota" class="form-control" rows="3"></textarea>
+        </div>
+        <div class="input-group mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Subir Tarea</label><br>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label text-right">Archivo:</label>
+            <div class="col-sm-10">
+                <input type="file" class="form-control" name="archivo" />
+            </div>
+        </div><br>
+        <div class="form-actions text-right">
+            <input type="submit" value="Enviar" class="btn btn-primary">
+        </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
