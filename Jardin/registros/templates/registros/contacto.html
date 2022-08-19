@@ -1,0 +1,45 @@
+{% extends "inicio/encabezado.html" %} {% block titulo %} Entregables {% endblock %}
+
+{% block contenido %}
+
+<br><br>
+<a href="{% url 'RegistrarDuda' %}" class="btn btn-danger" style="margin-left:110px">Registrar una duda</a>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="card-title">Dudas<p style="font-size:15px; margin-left: 600px ;">Nota: Si el comentario no es tuyo, por favor no lo edites o Elimines</p></h5>
+        </div>
+    </div>
+<table class="table text-center" >
+    {% for duda in dudas %}
+    <thead>
+
+        <tr class="table-danger">
+            <th scope="col">Nombre del Padre o Tutor</th>
+            <th scope="col">Nombre del Alumno</th>
+            <th scope="col">Grupo</th>
+            <th scope="col">Dudas</th>
+            <th scope="col">Editar Duda</th>
+            <th scope="col">Eliminar Duda</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{duda.nombreP}}</td>
+            <td>{{duda.nombreA}}</td>
+            <td>{{duda.grupo}}</td>
+            <td>{{duda.duda}}</td>
+            <td><a href="{% url 'ConsultarDuda' duda.id %}">Editar</a></td>
+            <td><a href="{% url 'EliminarDuda' duda.id %}">Eliminar</a></td>
+        </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+
+   </div>
+
+   <br>
+
+{% endblock %}

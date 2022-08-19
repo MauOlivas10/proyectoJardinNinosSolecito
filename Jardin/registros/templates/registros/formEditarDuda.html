@@ -1,0 +1,22 @@
+
+{% extends "inicio/encabezado.html" %} {% block titulo %} Entregables {% endblock %} 
+
+{% block contenido %}
+
+
+
+<!-- Formulario -->
+<div class="card m-auto mt-5" style="width: 500px ;">
+<form class="form-horizontal m-5"  action="{% url 'EditarDuda' duda.id %}" method="POST" role="form">
+    {%csrf_token%}
+                <div class="mb-3">
+                    <label class="form-label">Edita tu Duda aqui Porfavor</label>
+                    <textarea class="form-control" name="duda" rows="3" >{{duda.duda}}</textarea>
+                </div>
+                <input type="submit" value="Enviar" class="btn btn-primarym m-auto">
+           
+</form>
+</div>
+<!-- /Alert -->
+
+{% endblock %}

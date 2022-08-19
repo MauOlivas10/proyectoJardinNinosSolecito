@@ -1,0 +1,19 @@
+{% extends "inicio/encabezado.html" %} {% block titulo %} Eliminacion {% endblock %} 
+
+{% block contenido %}
+
+<br><br>
+<center>
+<form method="POST">
+    {% csrf_token %}
+    <div style="background-color: rgba(120, 201, 248, 0.74); width: 300px;" >
+        <h5>Eliminar Duda</h5>
+        <p>
+            ¿Esta seguro de eliminar esta Duda?
+        </p>
+    </div>
+    <button type="submit" class="btn btn-danger">Si</button>
+    <a href="{% url 'Principal' %}" class="btn btn-primary">Cancelar</a>
+</form>
+</center>
+{% endblock %}
